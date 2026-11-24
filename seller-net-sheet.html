@@ -2253,7 +2253,7 @@ function sheetDate(name, label) {
 function sheetFields() {
   return '<section data-sc-core><div class="sheet-head"><h2>Seller</h2><button type="button" data-options>Options</button></div>'+
     '<div class="sheet-fields">'+scText("property","Property address","Street address, city and state",240)+'<div data-address-access hidden></div>'+
-    scSelect("loanType","Loan type",[["","Select loan type"],["Conventional","Conventional"],["FHA","FHA"],["VA","VA"],["Cash","Cash"],["Other","Other"]])+
+    scSelect("loanType","Existing loan type",[["","Select loan type"],...["Conventional","Conforming","Non-Conforming (Jumbo)","FHA","VA","SBA","Private","Seller","Cash","Other"].map(t=>[t,t])])+
     scPrice("Sales price")+scRate("listRate","Seller broker fee")+scRate("buyerRate","Buyer broker fee paid by seller")+
     '<div class="sheet-pair">'+scNumber("concessions","Seller concession")+scSelect("concessionUnit","Unit",[["","Dollars"],["percent","Percent"]])+'</div>'+
     scNumber("fees","Miscellaneous costs")+scNumber("annualTaxes","Annual property taxes")+scText("escrowCompany","Escrow company","Enter company name")+
@@ -3562,21 +3562,46 @@ if (standaloneSheet) document.documentElement.classList.add("sheet-standalone");
 if ((standaloneSheet || previewParams.get("sample")==="1") && !enteredDesk) {
   returnRoute="net"; activateDesk(null);
 } else if (!location.hash) showEntry(); else changeRoute();
-if (previewParams.get("preview")==="propertyradar" && location.origin==="https://spencergregg2723-del.github.io") {
-  const access = net.querySelector("[data-address-access]");
+if (!standaloneSheet && location.origin==="https://spencergregg2723-del.github.io") {
+  const access=net.querySelector("[data-address-access]");
+  const privatePreview=previewParams.get("preview")==="propertyradar";
+  const addressField=inputRegion.querySelector("[name=property]");
+  function privateUrl(address,price) {
+    return "http://127.0.0.1:3187/closing-desk.html#"+new URLSearchParams({open:address,price});
+  }
   const link=document.createElement("a");
-  link.textContent="Open private PropertyRadar worksheet";
+  link.textContent="Prefill from address with PropertyRadar";
   link.target="_blank";link.rel="noopener noreferrer";
   function updatePrivateLink() {
-    const data=new URLSearchParams({open:listing?.label||"",price:listing?.askingPrice||""});
-    link.href="http://127.0.0.1:3187/closing-desk.html#"+data;
+    const typed=addressField.value.trim();
+    const address=listing?.label || (typed===sampleInputs.property ? "" : typed);
+    link.href=privateUrl(address,listing?.askingPrice || "");
   }
   updatePrivateLink();
   workspace.addEventListener("listingworksheetchange",updatePrivateLink);
-  access.append(link);
+  addressField.addEventListener("input",updatePrivateLink);
+  link.addEventListener("click",updatePrivateLink);
   const note=document.createElement("small");
-  note.textContent="Opens on the computer connected to your PropertyRadar account.";
-  access.append(note);access.hidden=false;
+  note.textContent="Opens the private worksheet on your connected computer. Available pricing fills before any export.";
+  if (privatePreview) access.append(link,note);
+  else {
+    const details=document.createElement("details");
+    const summary=document.createElement("summary");summary.textContent="Agent address autofill";
+    details.append(summary,link,note);access.append(details);
+  }
+  access.hidden=false;
+  if (privatePreview) {
+    const form=intake.entry.querySelector("form");
+    const submit=form.querySelector('[type="submit"]');
+    submit.textContent="Prefill seller net sheet";
+    intake.entry.querySelector(".entry-privacy").textContent="This preview opens the address in your private PropertyRadar worksheet on this computer.";
+    form.addEventListener("submit",event=>{
+      const raw=form.querySelector("#listing-address").value.trim(), resolved=resolveListingLocation(raw);
+      if (!resolved.street || !(resolved.city || resolved.zip) || ["partial","conflict"].includes(resolved.status)) return;
+      event.preventDefault();event.stopImmediatePropagation();
+      location.assign(privateUrl(raw,form.querySelector("#listing-price").value));
+    },{capture:true});
+  }
 }
 
 </script><!--
