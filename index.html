@@ -2167,6 +2167,7 @@ function scPrint(title, common, body, exampleState) {
 function mountNetSheet(el) {
   if (el.querySelector("[data-sc-net]") && scControllers.has(el)) return scControllers.get(el);
   el.innerHTML = '<div class="scalc" data-sc-net><p class="sc-intro">Estimate the cash a seller could take home at closing. Enter agreed fees and credits from the contract and escrow quote.</p>' +
+    scDetails("Guided seller net sheet", '<iframe src="./seller-net-sheet.html" title="Guided seller net sheet calculator" loading="lazy" height="780" style="display:block;width:100%;max-width:600px;margin:0 auto;border:0"></iframe>') +
     '<div class="sc-layout"><div class="sc-entry"><section data-sc-core><h2>Sale Details</h2>' +
     scGrid([scPrice("Sale price"), scNumber("payoff", "Loan and lien payoffs"), scNumber("concessions", "Seller concessions"), scSelect("location", "Property location", scLocations, true), scManualTax()]) + '</section>' + scTaxLocationHelp +
     scDetails("Brokerage compensation", scGrid([scRate("listRate", "Listing brokerage (%)"), scRate("buyerRate", "Seller-paid buyer brokerage (%)")]) + '<p class="sc-note">Enter the rates agreed for this transaction. For flat fees, use other costs.</p>') +
