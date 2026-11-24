@@ -1453,6 +1453,84 @@ dialog {box-shadow:none; border-color:var(--color-field); border-radius:.35rem;}
   [data-section=guide] .step-list li,
   [data-section=directory] .dir-list article {break-inside:avoid;}
 }
+/* Seller worksheet */
+[data-sc-net] {--sheet-blue:#356cbe;--sheet-ink:#152448;--sheet-rule:#cfd7e5;--sheet-paper:#fbfcfe;color:var(--sheet-ink);}
+[data-sc-net] .sc-layout {display:grid;grid-template-columns:minmax(240px,350px) minmax(335px,525px);gap:clamp(22px,4vw,64px);align-items:start;justify-content:center;padding:24px clamp(12px,2.5vw,42px);border:1px solid #e1e6ef;border-radius:6px;background:var(--sheet-paper);}
+[data-sc-net] .sc-entry {padding:0;border:0;background:transparent;}
+[data-sc-net] .sheet-head,[data-sc-net] .sheet-tabs {display:flex;align-items:center;justify-content:space-between;min-height:37px;margin:0 0 15px;}
+[data-sc-net] .sheet-head h2 {font-size:21px;font-weight:600;letter-spacing:-.025em;margin:0;}
+[data-sc-net] :is(.sheet-head button,.sheet-center button,.sheet-actions button) {color:var(--sheet-blue);background:transparent;border:0;cursor:pointer;font:inherit;font-size:13px;}
+[data-sc-net] .sheet-fields {display:grid;gap:11px;}
+[data-sc-net] .sheet-fields .sc-field,[data-sc-net] .sc-field:has([type=date]) {display:grid;gap:4px;margin:0;}
+[data-sc-net] .sheet-fields .sc-field>span:first-child {font-size:12px;font-weight:550;color:#334468;}
+[data-sc-net] .sheet-fields :is(.sc-input,select,input:not(.sc-input input)),[data-sc-net] .sc-field>input[type=date] {width:100%;height:37px;min-height:0;margin:0;border:1px solid var(--sheet-rule);border-radius:4px;background:#fff;color:var(--sheet-ink);font:inherit;font-size:14px;box-shadow:none;}
+[data-sc-net] .sheet-fields :is(select,input:not(.sc-input input)),[data-sc-net] .sc-field>input[type=date] {padding:0 9px;}
+[data-sc-net] .sheet-fields .sc-input {display:flex;align-items:stretch;overflow:hidden;padding:0;}
+[data-sc-net] .sheet-fields .sc-input>span {display:grid;place-items:center;order:-1;min-width:34px;height:100%;margin:0;padding:0 5px;background:#eaf3ff;border-right:1px solid var(--sheet-rule);color:var(--sheet-blue);font-weight:550;font-size:13px;}
+[data-sc-net] .sheet-fields .sc-input>input {width:0;flex:1;min-width:0;height:100%;border:none;background:transparent;font:inherit;font-size:14px;padding:0 8px;}
+[data-sc-net] .sheet-pair {display:grid;grid-template-columns:1fr 88px;gap:7px;}
+[data-sc-net] .sheet-fields small,[data-sc-net] .sheet-fields .sc-location-meaning {font-size:11px;line-height:1.4;color:#566783;}
+[data-sc-net] .sheet-compute {border:0;border-radius:4px;min-height:39px;background:#3776c8;color:white;cursor:pointer;font:inherit;font-size:13px;font-weight:650;letter-spacing:.04em;text-transform:uppercase;}
+[data-sc-net] .sheet-tabs {gap:5px;justify-content:space-around;margin:0;}
+[data-sc-net] .sheet-tabs a {font-size:11px;text-transform:uppercase;text-decoration:none;letter-spacing:.075em;color:#3868ae;line-height:1.8;}
+[data-sc-net] .sheet-tabs a[aria-current] {border-bottom:2px solid #588ce0;font-weight:700;}
+[data-sc-net] .sc-result {background:#fff;border:1px solid var(--sheet-rule);border-radius:5px;position:static;padding:0 0 12px;overflow:hidden;}
+[data-sc-net] .sc-result-top {background:transparent;border:none;text-align:center;padding:24px 12px 0;}
+[data-sc-net] .sc-result-top h2 {margin:0 0 19px;color:var(--sheet-ink);font-size:20px;font-weight:550;letter-spacing:0;}
+[data-sc-net] .sheet-ring {background:var(--segments,#e7ecf6);border:6px solid white;box-shadow:0 0 0 9px #f0f3fc;border-radius:50%;width:min(70%,265px);aspect-ratio:1;margin:12px auto 20px;display:grid;place-items:center;}
+[data-sc-net] .sheet-center {width:83%;height:83%;border-radius:50%;background:white;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:3px;}
+[data-sc-net] .sheet-center small {font-size:11px;color:#5e6c85;}
+[data-sc-net] .sheet-center strong {font-size:clamp(19px,2.4vw,32px);letter-spacing:-.045em;color:#203357;line-height:1.3;font-weight:550;font-variant-numeric:tabular-nums;}
+[data-sc-net] .sheet-center button {font-size:14px;margin:0;padding:3px 8px;}
+[data-sc-net] .sc-result-top [data-net-status],[data-sc-net] .sc-result-top [data-sc-listing] {font-size:12px;line-height:1.4;margin:4px 0;color:#596985;padding:0;border:0;}
+[data-sc-net] .sheet-legend {width:min(88%,365px);margin:20px auto;}
+[data-sc-net] .sheet-legend>div {display:flex;align-items:baseline;justify-content:space-between;gap:7px;padding:4px 0;}
+[data-sc-net] .sheet-legend dt,[data-sc-net] .sheet-legend dd {margin:0;color:#243657;font-size:13px;line-height:1.45;font-variant-numeric:tabular-nums;}
+[data-sc-net] .sheet-legend dt {display:flex;align-items:baseline;gap:8px;}
+[data-sc-net] .sheet-legend i {width:11px;height:11px;flex:0 0 11px;border-radius:50%;}
+[data-sc-net] .sheet-legend dd {text-align:right;white-space:nowrap;}
+[data-sc-net] .sheet-actions {display:flex;flex-wrap:wrap;justify-content:space-around;gap:5px;border-top:1px solid #edf0f5;padding:8px;}
+[data-sc-net] .sheet-actions button {margin:0;padding:8px 4px;min-height:36px;font-weight:550;}
+[data-sc-net] .sheet-actions button:disabled {color:#64758c;cursor:default;}
+[data-sc-net] .sheet-actions button span {font-size:18px;margin-left:6px;}
+[data-sc-net] .sc-result-detail {padding:12px 18px;}
+[data-sc-net] .sc-detail-body .sc-field {margin:.5rem 0;}
+[data-sc-net] .property-card {margin:12px 0;}
+[data-sc-net] .sc-details summary {font-size:14px;}
+[data-sc-net] .fee-review {font-size:12px;padding:6px 15px;margin:6px 0;background:#f6f8fc;}
+[data-sc-net] .sc-fine {max-width:95ch;}
+[data-sc-net] [hidden] {display:none!important;}
+@media screen and (max-width:850px) {
+ [data-sc-net] .sc-layout {grid-template-columns:minmax(200px,.84fr) minmax(245px,1fr);gap:18px;padding:14px;}
+}
+@media screen and (max-width:660px) {
+ [data-sc-net] .sc-layout {grid-template-columns:minmax(0,1fr);padding:12px;gap:18px;}
+ [data-sc-net] .sheet-output {order:-1;}
+ [data-sc-net] .sheet-ring {width:clamp(135px,44vw,190px);margin-bottom:16px;}
+ [data-sc-net] .sc-result-top {padding:16px 10px 0;}
+ [data-sc-net] .sc-result-top h2 {font-size:18px;}
+ [data-sc-net] .sheet-legend {margin:12px auto;}
+ [data-sc-net] .mobile-net,[data-sc-net] .fee-review-mobile {display:none!important;}
+ [data-sc-net]:has(.mobile-net) .sc-result .fee-review:not([hidden]) {display:block;}
+ [data-sc-net] .sheet-head {margin-bottom:6px;}
+}
+
+[data-address-access] {display:grid;gap:6px;padding:8px 10px;background:#eff5fe;border-radius:4px;}
+[data-address-access] :is(a,button) {justify-self:start;color:#245b9f;background:transparent;border:0;padding:3px;font:inherit;font-size:13px;text-decoration:underline;cursor:pointer;text-align:left;}
+[data-address-access] :is(strong,label) {display:block;font-size:13px;}
+[data-address-access] label>input[type=checkbox] {appearance:auto;width:15px;height:15px;vertical-align:middle;}
+html.sheet-standalone .shell {display:block;}
+html.sheet-standalone :is(.sidebar,.mobile-head,.desk-head,.related,.sc-eagle,footer) {display:none!important;}
+html.sheet-standalone .main {max-width:1080px;margin:0 auto;padding:10px;}
+html.sheet-standalone .page-heading {margin:0 0 12px;padding:10px 0;}
+html.sheet-standalone #page-title {font-size:1.45rem;}
+html.sheet-standalone #page-desc {display:none;}
+[data-sc-net] .sheet-fields .sc-field {grid-template-columns:minmax(0,1fr);justify-content:stretch;justify-items:stretch;}
+[data-sc-net] .sheet-fields .sc-input {width:100%;}
+[data-sc-net] .sheet-tabs {flex-direction:row;min-height:37px;padding:0 0 5px;}
+[data-sc-net] nav.sheet-tabs a {display:inline-block;min-height:0;padding:4px 2px;border:0;border-radius:0;background:transparent;box-shadow:none;}
+[data-sc-net] nav.sheet-tabs a[aria-current] {border-bottom:2px solid #588ce0;}
+[data-sc-net] .sheet-actions button.sc-print:enabled {margin:0;background:transparent;color:var(--sheet-blue);}
 </style></head><body><div id="root"></div><noscript>Enable JavaScript in your browser to open the calculators and guide. Contact Spencer Gregg at 916-903-2298 for assistance.</noscript><script>
 "use strict";
 const guideData = {"region":"Sacramento and Placer counties, California","contact":{"name":"Spencer Gregg","role":"Sales Representative","company":"First American Title","phone":"916-903-2298","email":"sgregg@firstam.com","url":"https://local.firstam.com/ca/reps/sgregg","locationsServed":["Folsom","Rancho Cordova","Granite Bay"]},"basics":[{"title":"What is title?","body":"Title is the legal right to own a property. The title team checks public records to see who holds that right and which recorded matters, such as mortgages or easements, may affect the sale.","source":"title"},{"title":"What is title insurance?","body":"An owner’s policy protects the named buyer against covered title problems. A lender’s policy protects the lender’s interest. Each policy spells out its covered risks, exclusions and exceptions.","source":"title"},{"title":"What is escrow?","body":"Escrow is a neutral third party that holds documents and money for the buyer and seller. It follows their written instructions and releases funds and documents when the agreed conditions are met.","source":"escrow"}],"sellerGuide":{"title":"California home seller’s guide","body":"Give your seller a 16-page First American guide to the people, documents and decisions they’ll encounter from listing through closing.","formats":"English · PDF · 16 MB","spanishRequest":"Ask Spencer for the full guide in Spanish"},"preopen":{"title":"Request a preliminary report before an offer","intro":"If the seller wants a head start on title review, ask a local escrow officer about pre-opening a file for the listing.","items":[{"title":"Identify the property and sellers.","body":"Give the property address, the parcel number if available, and the names of everyone expected to sign. Mention a trust, estate or power of attorney."},{"title":"Ask what the office needs.","body":"Provide your contact details and ask how to send any requested listing agreement or supporting documents securely."},{"title":"Follow up on the report.","body":"Save the file number and ask for the linked preliminary report. Review owner names, the legal description and listed exceptions with the title team. After acceptance, send the signed purchase agreement and any addenda."}]},"identity":{"title":"Confirm the seller’s authority early","body":"Compare the seller’s name with ownership records. If details conflict or someone resists verification, pause and contact the owner through an independently verified channel. Ask your broker and title team how to confirm signing authority and record the steps you take."},"steps":[{"title":"Prepare the listing","when":"Before an offer","body":"Ask who holds title and who will sign. Flag any trust, estate, name change, solar agreement or homeowners association for the escrow team. Request an estimate of closing costs.","action":"Ask the seller to gather lender and HOA contact details.","source":"escrow"},{"title":"Open escrow","when":"After acceptance","body":"Send escrow the signed purchase agreement and any addenda. Confirm the file number, deposit deadline, closing date and who will handle any changes in instructions.","action":"Introduce the seller to their escrow officer using a verified phone number.","source":"escrow"},{"title":"Review the preliminary report","when":"During escrow","body":"Read the owner names, legal description, requirements and exceptions with the title team. Ask about unfamiliar liens and easements. The report describes the terms on which the insurer is prepared to issue a policy.","action":"Flag discrepancies early and request copies of recorded items you want explained.","source":"title"},{"title":"Confirm costs and sign","when":"Before closing","body":"Escrow obtains payoff figures and prepares an estimated settlement statement. Check seller credits, fees and prorated taxes against the agreement. Confirm identification and signing arrangements with the escrow officer.","action":"Compare the written estimate to the seller’s net sheet and explain any changes.","source":"escrow"},{"title":"Record and release proceeds","when":"At closing","body":"Once escrow has the required funds, documents and instructions, the deed goes to the county for recording. Escrow confirms closing, pays the authorized charges and delivers seller proceeds under the agreed instructions.","action":"Wait for confirmation of recording. Arrange keys and possession as the contract directs.","source":"escrow"}],"checklist":["Confirm the names of the owners and everyone who must sign.","Gather lender, HOA and solar-provider details, where applicable.","Review the preliminary report and ask about items you do not recognize.","Check seller credits, payoff amounts and all fee estimates.","Confirm signing appointments, identification and possession timing."],"wireSafety":{"title":"Verify before you wire","body":"Save the escrow office’s number from a trusted source at the start. Call that number to confirm payment instructions. If an email or text changes the destination, pause and speak directly with the escrow officer.","source":"wire"},"directoryNote":"Use the county where the property sits for recording and tax questions. Utility service boundaries can change from one address to the next.","directory":[{"county":"Sacramento","category":"Title & escrow","name":"First American Title · Citrus Heights","location":"6939 Sunrise Boulevard, Suite 123, Citrus Heights, CA 95610","description":"Call the local escrow office for a fee estimate, a new escrow file or signing arrangements.","phone":"916-547-5437","url":"https://local.firstam.com/ca/offices/citrus-heights"},{"county":"Sacramento","category":"Property taxes","name":"Sacramento County Tax Collector","location":"Sacramento County","description":"Look up a secured property tax bill by parcel number or ask about payments.","phone":"916-874-6622","url":"https://finance.saccounty.gov/us/en/tax/contact-us.html"},{"county":"Placer","category":"Property taxes","name":"Placer County Tax Collector","location":"Placer County","description":"Ask about a property tax bill, payment or deadline.","phone":"530-889-4120","url":"https://www.placer.ca.gov/10431/Treasurer-Tax-Collector"},{"county":"Sacramento","category":"County records","name":"Sacramento County Clerk/Recorder","location":"3636 American River Drive, Suite 110, Sacramento, CA 95864","description":"Contact the recorder about deeds and copies of recorded documents.","phone":"916-874-6334","url":"https://ccr.saccounty.gov/us/en/contact-us.html"},{"county":"Placer","category":"County records","name":"Placer County Clerk-Recorder","location":"3715 Atherton Road, Rocklin, CA 95765","description":"Main office for recording and real property records. The county also has a recording counter in Auburn.","phone":"530-886-5600","url":"https://www.placer.ca.gov/1709/Clerk-Recorder"},{"county":"Placer","category":"Title & escrow","name":"First American Title · Roseville","location":"915 Highland Pointe Drive, Suite 140, Roseville, CA 95678","description":"Contact the local escrow team about opening a file, closing fees or a signing appointment.","phone":"916-788-1700","url":"https://local.firstam.com/ca/offices/roseville-new"},{"county":"Sacramento","category":"Moving & utilities","name":"SMUD electric service","location":"SMUD service area","description":"Start, stop or transfer residential electric service for a move.","phone":"888-742-7683","url":"https://www.smud.org/Corporate/Landing-Pages/Moves"},{"county":"Sacramento","category":"Moving & utilities","name":"Find my water company","location":"Sacramento County","description":"Use the county map and supplier directory to identify the water company for an address, including in Rancho Cordova.","phone":"","url":"https://waterresources.saccounty.gov/us/en/water-agency/find-my-water-company.html"},{"county":"Placer","category":"Moving & utilities","name":"Roseville Utilities","location":"Roseville city utility service area","description":"Contact Utility Customer Care to set up or stop city utility service.","phone":"916-774-5300","url":"https://www.roseville.ca.gov/utilities_customer_care/contact_us.php"},{"county":"Placer","category":"Moving & utilities","name":"San Juan Water District","location":"Granite Bay area, within district boundaries","description":"Check the water district’s start and stop service instructions for home sellers.","phone":"916-791-0115","url":"https://www.sjwd.org/starting-or-stopping-water-service"}],"sources":{"sellerGuide":{"name":"First American · California home seller’s guide","url":"https://first-american-bucket.s3.amazonaws.com/local-firstam-com/live/assets/documents/ca/-shared/reference-docs/20085-california-sellers-guide.pdf"},"spanishFaq":{"name":"Preguntas frecuentes sobre el seguro de título","url":"https://first-american-bucket.s3.amazonaws.com/local-firstam-com/live/assets/documents/-shared/multicultural-docs/12786-frequently-asked-questions-about-title-insurance-spanish.pdf"},"movingGuide":{"name":"First American · Seller’s moving guide (PDF)","url":"https://first-american-bucket.s3.amazonaws.com/local-firstam-com/live/assets/documents/-shared/24155-sellers-moving-guide.pdf"},"reminders":{"name":"First American · Reminders after closing (PDF)","url":"https://first-american-bucket.s3.amazonaws.com/local-firstam-com/live/assets/documents/-shared/10051-reminders-for-sellers.pdf"},"commonTitle":{"name":"First American · 10 common title problems","url":"https://www.firstam.com/title/multiculturalresources/10-common-title-problems.html"},"sellerIdentity":{"name":"California DRE · Seller impersonation guidance","url":"https://dre.ca.gov/Newsroom/DRE_Updates/2026_11_16_Impersonating_Sellers.html"},"title":{"name":"First American · Understanding title insurance","url":"https://www.firstam.com/title/multiculturalresources/what-is-title-insurance.html"},"escrow":{"name":"California Department of Real Estate · Escrow guide","url":"https://www.dre.ca.gov/files/pdf/escrow_info_consumers.pdf"},"wire":{"name":"First American · Wire fraud prevention","url":"https://www.firstam.com/fraud-protection/cyber-safety-tips/"},"office":{"name":"First American · Find an office","url":"https://www.firstam.com/title/find-an-office/"},"portal":{"name":"First American · Secure transaction portal","url":"https://www.firstam.com/title/transactionsportal/index.html"},"fees":{"name":"First American · Title fee calculator","url":"https://facc.firstam.com/"},"profile":{"name":"First American · Spencer Gregg","url":"https://local.firstam.com/ca/reps/sgregg"}}};
@@ -2056,7 +2134,7 @@ function scWorksheetController(el, root, read, write, defaults, refresh) {
     const reference = root.querySelector("[name=property]");
     if (reference) {
       reference.readOnly = !!profile;
-      reference.closest("label").firstElementChild.textContent = profile ? "Listing address" : "Property / listing reference";
+      reference.closest("label").firstElementChild.textContent = profile ? "Listing address" : (kind === "net" ? "Property address" : "Property / listing reference");
     }
     const text = scListingText(profile);
     for (const caption of root.querySelectorAll("[data-sc-listing]")) {
@@ -2120,6 +2198,7 @@ function scValidation(container, values, fallback) {
       if (invalid.name === "price") return "Enter a sale or offer price.";
       if (invalid.name === "manualTax") return "Enter the quoted seller transfer tax, including $0 if exempt.";
     }
+    if (invalid.validity.customError) return invalid.validationMessage;
     const label = invalid.closest("label")?.firstElementChild?.textContent || fallback;
     return 'Check the value for ' + label.toLowerCase() + '.';
   }
@@ -2164,18 +2243,89 @@ function scPrint(title, common, body, exampleState) {
   window.print();
 }
 
+const sheetFees = [
+  ["form593", "593 form"], ["notary", "Notary fee"], ["warranty", "Home warranty"],
+  ["disclosure", "Natural hazard disclosure"], ["pest", "Termite / pest inspection"]
+];
+function sheetDate(name, label) {
+  return '<label class="sc-field"><span>'+label+'</span><input name="'+name+'" type="date" min="1900-01-01" max="2199-12-31"></label>';
+}
+function sheetFields() {
+  return '<section data-sc-core><div class="sheet-head"><h2>Seller</h2><button type="button" data-options>Options</button></div>'+
+    '<div class="sheet-fields">'+scText("property","Property address","Street address, city and state",240)+'<div data-address-access hidden></div>'+
+    scSelect("loanType","Loan type",[["","Select loan type"],["Conventional","Conventional"],["FHA","FHA"],["VA","VA"],["Cash","Cash"],["Other","Other"]])+
+    scPrice("Sales price")+scRate("listRate","Seller broker fee")+scRate("buyerRate","Buyer broker fee paid by seller")+
+    '<div class="sheet-pair">'+scNumber("concessions","Seller concession")+scSelect("concessionUnit","Unit",[["","Dollars"],["percent","Percent"]])+'</div>'+
+    scNumber("fees","Miscellaneous costs")+scNumber("annualTaxes","Annual property taxes")+scText("escrowCompany","Escrow company","Enter company name")+
+    scNumber("primaryLoan","Primary loan balance")+scRate("primaryRate","Primary loan rate")+
+    scNumber("secondaryLoan","Secondary loan balance")+scRate("secondaryRate","Secondary loan rate")+
+    '<div data-combined-row>'+scNumber("payoff","Combined loan / lien payoff")+'<small>Use this when only the total payoff is known.</small></div>'+
+    sheetDate("closeDate","Closing date")+scSelect("location","Transfer-tax location",scLocations,true)+scManualTax()+
+    '<button class="sheet-compute" type="button" data-compute>Compute</button></div></section>';
+}
+function sheetOptions() {
+  return '<details class="sc-details" data-sheet-options><summary>Loan interest and tax proration</summary><div class="sc-detail-body">'+
+    sheetDate("interestThrough","Loan interest paid through")+sheetDate("taxThrough","Property taxes paid through")+
+    '<p class="sc-note">Enter paid-through dates from the lender and the tax bill. Interest uses the individual balances and rates on a 365-day basis. Taxes use annual tax divided by 365, with a credit for days paid past closing. For a combined payoff, include lender interest in the quote. Enter any remaining adjustments below.</p></div></details>'+
+    scDetails("Detailed closing cost inputs",scGrid([scNumber("title","Seller-paid title insurance"),scNumber("escrow","Seller-paid escrow fees"),
+      ...sheetFees.map(([key,label])=>scNumber(key,label)),scNumber("debits","Additional prorations and withholding owed"),scNumber("credits","Additional credits to seller")]))+
+    scDetails("Transfer tax and loan assumptions",scTaxShares()+scNumber("assumed","Debt assumed by buyer")+
+      '<p class="sc-note">Exclude assumed debt from loan payoffs.</p>');
+}
+function sheetCard() {
+  return '<div class="sheet-output"><nav class="sheet-tabs" aria-label="Seller worksheets"><a href="#offers">Multiple offers</a><a href="#net" aria-current="page">Net sheet</a><a href="#waiting">Holding costs</a></nav>'+
+    '<aside class="sc-result" aria-label="Net at close"><div class="sc-result-top"><h2>Net at Close</h2>'+
+    '<div class="sheet-ring"><div class="sheet-center"><small data-net-label></small><strong data-net aria-live="polite">—</strong><button type="button" data-edit>Edit</button></div></div>'+
+    '<span data-net-status></span>'+scListingCaption+'</div><dl class="sheet-legend" data-legend></dl>'+
+    '<div class="sheet-actions"><button type="button" data-show-costs aria-expanded="false">Detailed closing costs <span aria-hidden="true">›</span></button>'+
+    '<button class="sc-print" type="button" data-action="print" disabled>Print / save PDF <span aria-hidden="true">›</span></button></div>'+
+    '<section class="sc-result-detail" hidden><h2>Detailed closing costs</h2><dl class="sc-lines" data-net-lines></dl></section></aside></div>';
+}
+function sheetAdjustments(values) {
+  const days = (end,start) => end && start ? Math.round((Date.parse(end)-Date.parse(start))/86400000) : 0;
+  const interestDays = Math.max(0,days(values.closeDate,values.interestThrough));
+  const dailyInterest = (Number(values.primaryLoan||0)*Number(values.primaryRate||0)+Number(values.secondaryLoan||0)*Number(values.secondaryRate||0))/36500;
+  const tax = scCents(Number(values.annualTaxes||0)*days(values.closeDate,values.taxThrough)/365);
+  const interest = scCents(interestDays*dailyInterest);
+  return {interest,tax};
+}
+function sheetEstimate(values) {
+  const primary = scCents(values.primaryLoan), secondary = scCents(values.secondaryLoan);
+  const combined = values.payoff !== "";
+  const adjustments = sheetAdjustments(values);
+  const concessions = values.concessionUnit === "percent" ? scPercent(scCents(values.price),values.concessions)/100 : values.concessions;
+  const base = sellerEstimate({...values,payoff:0},{...values,concessions});
+  const loans = combined ? [["Combined loan / lien payoff",scCents(values.payoff)]] : [["Primary loan balance",primary],["Secondary loan balance",secondary]];
+  const costs = [...base.items.filter(([label])=>label!=="Loan and lien payoffs"),
+    ...sheetFees.map(([key,label])=>[label,scCents(values[key])]),["Accrued loan interest",adjustments.interest]];
+  const closingCosts = costs.reduce((sum,[,cents])=>sum+cents,0);
+  const tax = adjustments.tax;
+  const items = [...loans, ...costs, [tax < 0 ? "Prorated tax credit" : "Prorated tax debit",tax]];
+  const total = items.reduce((sum,[,cents])=>sum+cents,0);
+  return {...base, net:base.price-total, total, items, loans, tax, closingCosts};
+}
+function drawSheet(root, result, combined) {
+  const rows = [["Sales price",result?.price,"#e5eafa"],...(result?.loans || (combined ? [["Combined loan / lien payoff",null]] : [["Primary loan balance",null],["Secondary loan balance",null]])).map(([label,val],index)=>[label,val,index ? "#a1cf71" : "#60a728"]),
+    [result?.tax < 0 ? "Prorated tax credit" : result?.tax > 0 ? "Prorated tax debit" : "Prorated property tax",result ? Math.abs(result.tax) : null,"#92749b"],
+    ["Closing costs and adjustments",result?.closingCosts,"#f6b522"],[result?.net < 0 ? "Cash needed to close" : "Net at close",result?.net,"#638afb"]];
+  root.querySelector("[data-legend]").innerHTML = rows.map(([label,cents,color])=>'<div><dt><i style="background:'+color+'"></i>'+label+'</dt><dd>'+(cents==null ? '—' : scDollars(Math.abs(cents))+(label==="Closing costs and adjustments" && cents<0 ? ' credit' : ''))+'</dd></div>').join("");
+  const ring = root.querySelector(".sheet-ring");
+  const slices = result ? [[result.net,"#638afb"],[result.closingCosts,"#f6b522"],[result.tax,"#92749b"],
+    ...result.loans.map(([,cents],index)=>[cents,index ? "#a1cf71" : "#60a728"]).reverse()].filter(([value])=>value>0) : [];
+  const total = slices.reduce((sum,[value])=>sum+value,0);
+  let angle = 0;
+  ring.style.setProperty("--segments", total ? 'conic-gradient('+slices.map(([value,color])=>{
+    const start = angle; angle += value/total*360;
+    const gap = Math.min(1,(angle-start)/4);
+    return color+' '+start+'deg '+(angle-gap)+'deg, white '+(angle-gap)+'deg '+angle+'deg';
+  }).join(",")+')' : '#e7ecf6');
+}
+
 function mountNetSheet(el) {
   if (el.querySelector("[data-sc-net]") && scControllers.has(el)) return scControllers.get(el);
   el.innerHTML = '<div class="scalc" data-sc-net><p class="sc-intro">Estimate the cash a seller could take home at closing. Enter agreed fees and credits from the contract and escrow quote.</p>' +
-    scDetails("Guided seller net sheet", '<iframe src="./seller-net-sheet.html" title="Guided seller net sheet calculator" loading="lazy" height="780" style="display:block;width:100%;max-width:600px;margin:0 auto;border:0"></iframe>') +
-    '<div class="sc-layout"><div class="sc-entry"><section data-sc-core><h2>Sale Details</h2>' +
-    scGrid([scPrice("Sale price"), scNumber("payoff", "Loan and lien payoffs"), scNumber("concessions", "Seller concessions"), scSelect("location", "Property location", scLocations, true), scManualTax()]) + '</section>' + scTaxLocationHelp +
-    scDetails("Brokerage compensation", scGrid([scRate("listRate", "Listing brokerage (%)"), scRate("buyerRate", "Seller-paid buyer brokerage (%)")]) + '<p class="sc-note">Enter the rates agreed for this transaction. For flat fees, use other costs.</p>') +
-    scDetails("Closing costs and prorations", scExpenses()) +
-    scDetails("Transfer tax and loan assumptions", scTaxShares() + scGrid([scNumber("assumed", "Debt assumed by buyer")]) + '<p class="sc-note">Enter assumed debt only when it is included in the price. Exclude it from loan payoffs.</p>') +
-    scDetails("Label this estimate", scGrid([scProperty()])) + '</div>' +
-    '<aside class="sc-result" aria-label="Seller proceeds"><div class="sc-result-top"><p data-net-label>Estimated seller proceeds</p><strong data-net aria-live="polite">—</strong><span data-net-status></span>' + scListingCaption + '</div>' +
-    '<div class="sc-result-detail" hidden><h2>Cost Breakdown</h2><dl class="sc-lines" data-net-lines></dl></div>' + scPrintButton("Print / save net sheet") + '</aside></div>' +
+    '<div class="sc-layout"><div class="sc-entry">'+sheetFields()+sheetOptions()+scTaxLocationHelp+
+    '</div>'+sheetCard()+'</div>'+
     '<p class="sc-fine">' + scDisclaimer + '</p>' +
     '<section class="sc-eagle"><div><h2><a href="' + scEagleUrl + '" target="_blank" rel="noopener noreferrer" referrerpolicy="no-referrer">EagleAgent ONE Net Sheet Calculator</a></h2>' +
     '<p>Open Spencer Gregg’s public calculator in a new tab to review the address, taxes, loan balance, fees and closing date.</p></div>' +
@@ -2184,6 +2334,22 @@ function mountNetSheet(el) {
   const root = el.querySelector("[data-sc-net]");
   const entry = root.querySelector(".sc-entry");
   const print = root.querySelector("[data-action=print]");
+  const options = root.querySelector("[data-sheet-options]");
+  root.querySelector("[data-options]").onclick = () => {options.open=true;options.querySelector("summary").focus();};
+  root.querySelector("[data-edit]").onclick = () => entry.querySelector("[name=price]").focus();
+  const disclosure = root.querySelector("[data-show-costs]");
+  let expanded = false;
+  disclosure.onclick = () => {
+    expanded = !expanded; refresh();
+    if (expanded) root.querySelector(".sc-result-detail").scrollIntoView({block:"nearest"});
+  };
+  root.querySelector("[data-compute]").onclick = () => {
+    refresh();
+    const invalid = [...entry.querySelectorAll("input,select")].find(n=>!n.disabled && !n.validity.valid);
+    if (invalid) {invalid.focus();invalid.reportValidity();return;}
+    const resultBox=root.querySelector(".sc-result");
+    resultBox.tabIndex=-1;resultBox.focus({preventScroll:true});resultBox.scrollIntoView({block:"start"});
+  };
   const copyAddress = root.querySelector("[data-eagle-copy]");
   const copyStatus = root.querySelector("[data-eagle-status]");
   const copyFallback = root.querySelector("[data-eagle-fallback]");
@@ -2203,12 +2369,20 @@ function mountNetSheet(el) {
       copyFallback.hidden = true;
       copyFallback.querySelector("input").value = "";
     }
+    const hasSplit = values.primaryLoan !== "" || values.secondaryLoan !== "";
+    const field = name => entry.querySelector('[name="'+name+'"]');
+    field("payoff").setCustomValidity(hasSplit && values.payoff !== "" ? "Use either the combined payoff or the individual loan balances." : "");
+    field("concessions").max = values.concessionUnit === "percent" ? "100" : "9999999999";
+    field("concessions").closest(".sc-input").querySelector("span").textContent = values.concessionUnit === "percent" ? "%" : "$";
     const message = scValidation(entry, values, "sale details");
-    const result = message ? null : sellerEstimate(values, values);
-    root.querySelector("[data-net-label]").textContent = result ? scNetLabel(result) : "Estimated seller proceeds";
+    const result = message ? null : sheetEstimate(values);
+    drawSheet(root,result,values.payoff !== "");
+    root.querySelector("[data-net-label]").textContent = result?.net < 0 ? "Cash needed to close" : "Estimated proceeds";
     root.querySelector("[data-net]").textContent = result ? scDollars(Math.abs(result.net)) : "—";
-    root.querySelector("[data-net-status]").textContent = message || "Based on the amounts entered";
-    root.querySelector(".sc-result-detail").hidden = !result;
+    root.querySelector("[data-net-status]").textContent = message || (root.dataset.exampleState?.includes("sample") ? "Illustrative example" : "Estimated from the amounts entered");
+    disclosure.disabled = !result;
+    disclosure.setAttribute("aria-expanded",String(!!result && expanded));
+    root.querySelector(".sc-result-detail").hidden = !result || !expanded;
     root.querySelector("[data-net-lines]").innerHTML = result ? '<div><dt>Sale price</dt><dd>' + scDollars(result.price) + '</dd></div>' + scCostLines(result) + scNetTotal(result) : '';
     print.disabled = !result;
     values.listingLabel = scListingText(controller?.getListing());
@@ -2237,7 +2411,10 @@ function mountNetSheet(el) {
   print.addEventListener("click", () => {
     if (!report) return;
     const {values, result} = report;
-    const rateBasis = el.querySelector("[data-rate-print]")?.textContent.trim() || "";
+    const dates = [values.closeDate && "Closing "+values.closeDate, values.loanType, values.escrowCompany,
+      values.annualTaxes && "Annual property taxes "+scMoney.format(Number(values.annualTaxes)),
+      values.taxThrough && "Taxes paid through "+values.taxThrough,values.interestThrough && "Interest paid through "+values.interestThrough].filter(Boolean);
+    const rateBasis = [dates.join(" · "),el.querySelector("[data-rate-print]")?.textContent.trim()].filter(Boolean).join(". ");
     scPrint("Seller net sheet", {...values,rateBasis}, '<dl class="sc-lines"><div><dt>Sale price</dt><dd>' + scDollars(result.price) + '</dd></div>' +
       scCostLines(result, true) + scNetTotal(result) + '</dl>', controller.getListing() ? "listing" : root.dataset.exampleState);
   });
@@ -3076,7 +3253,7 @@ net.insertAdjacentHTML("afterbegin",'<button type="button" class="mobile-net" ar
 net.querySelector(".mobile-net").onclick = () => {const result = net.querySelector(".sc-result"); result.tabIndex=-1;result.focus({preventScroll:true});result.scrollIntoView({block:"start"});};
 net.querySelector("[data-sc-core]").insertAdjacentHTML("afterend",'<div class="property-card"><img src="'+photo+'" alt="Illustrative single-story California home"><div><span class="label" id="estimate-kind"></span><strong id="estimate-caption"></strong><span id="estimate-hint"></span></div></div>');
 netPanel.insertAdjacentHTML("beforeend",'<section class="related"><h2>Related tools</h2><div>'+deskLink("offers","Compare seller net and terms")+deskLink("market","See current asking prices")+deskLink("guide","Prepare for closing")+'</div></section>');
-const sampleInputs = { price:"650000", location:"placer", payoff:"310000", concessions:"5000", title:"1500", escrow:"950", fees:"375", property:"Illustrative Roseville sale" };
+const sampleInputs = {price:"650000",location:"placer",primaryLoan:"270000",primaryRate:"4",secondaryLoan:"40000",secondaryRate:"6",concessions:"5000",title:"1500",escrow:"950",fees:"375",annualTaxes:"4200",listRate:"2.5",buyerRate:"2",loanType:"Conventional",closeDate:"2026-12-15",taxThrough:"2026-12-31",interestThrough:"2026-12-01",property:"Illustrative Roseville sale"};
 const inputRegion = net.querySelector(".sc-entry");
 let editing = false;
 let estimateState = "sample";
@@ -3118,6 +3295,7 @@ const resetParcelCheck = mountParcelCheck(net,()=>listing,applyParcelResult);
 const ownerFees = mountResaleFees(net,()=>listing);
 function estimateHeading() {
   net.dataset.exampleState = listing ? "listing" : estimateState;
+  if (!listing && net.dataset.exampleState.includes("sample") && !net.querySelector("[data-action=print]").disabled) net.querySelector("[data-net-status]").textContent="Illustrative example";
   net.querySelector(".property-card").toggleAttribute("data-listing",!!listing);
   const chosen = net.querySelector('[name="location"]');
   if (listing) {
@@ -3131,7 +3309,7 @@ function estimateHeading() {
   const detail = estimateState === "sample" ? "Roseville, California" : property && property !== sampleInputs.property ? property : "Seller worksheet";
   net.querySelector("#estimate-kind").textContent = estimateState === "sample" ? "Illustrative example" : estimateState === "modified-sample" ? "Edited example" : "Your estimate";
   net.querySelector("#estimate-caption").textContent = detail;
-  net.querySelector("#estimate-hint").textContent = estimateState === "sample" ? "Sample costs. Brokerage compensation is $0." : estimateState === "modified-sample" ? "Review all sample amounts before sharing." : chosen.value ? chosen.selectedOptions[0].textContent : "Enter the agreed figures below.";
+  net.querySelector("#estimate-hint").textContent = estimateState === "sample" ? "Illustrative amounts and negotiated fees." : estimateState === "modified-sample" ? "Review all sample amounts before sharing." : chosen.value ? chosen.selectedOptions[0].textContent : "Enter the agreed figures below.";
 }
 function quickNet() {
   net.querySelector("[data-quick-label]").textContent=net.querySelector("[data-net-label]").textContent;
@@ -3144,6 +3322,7 @@ function setEstimate(example) {
     n.value = example && Object.hasOwn(sampleInputs, n.name) ? sampleInputs[n.name] : ["cityShare","countyShare"].includes(n.name) ? "100" : "";
   });
   estimateState = example ? "sample" : "blank";
+  net.dataset.exampleState=estimateState;
   inputRegion.dispatchEvent(new Event("input",{bubbles:true}));
   estimateHeading();
   quickNet();
@@ -3377,7 +3556,28 @@ if (typeof savedListing?.raw === "string" && savedListing.raw.length<=240) {
     activateDesk(profile,savedListing,false);
   }
 }
-if (!location.hash) showEntry(); else changeRoute();
+const standaloneSheet = !!document.querySelector('meta[name="standalone-seller-sheet"]');
+const previewParams = new URLSearchParams(location.search);
+if (standaloneSheet) document.documentElement.classList.add("sheet-standalone");
+if ((standaloneSheet || previewParams.get("sample")==="1") && !enteredDesk) {
+  returnRoute="net"; activateDesk(null);
+} else if (!location.hash) showEntry(); else changeRoute();
+if (previewParams.get("preview")==="propertyradar" && location.origin==="https://spencergregg2723-del.github.io") {
+  const access = net.querySelector("[data-address-access]");
+  const link=document.createElement("a");
+  link.textContent="Open private PropertyRadar worksheet";
+  link.target="_blank";link.rel="noopener noreferrer";
+  function updatePrivateLink() {
+    const data=new URLSearchParams({open:listing?.label||"",price:listing?.askingPrice||""});
+    link.href="http://127.0.0.1:3187/closing-desk.html#"+data;
+  }
+  updatePrivateLink();
+  workspace.addEventListener("listingworksheetchange",updatePrivateLink);
+  access.append(link);
+  const note=document.createElement("small");
+  note.textContent="Opens on the computer connected to your PropertyRadar account.";
+  access.append(note);access.hidden=false;
+}
 
 </script><!--
 The MIT License (MIT)
